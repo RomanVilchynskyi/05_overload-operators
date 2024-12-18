@@ -58,6 +58,41 @@ namespace _05_ht_and_practise_job
             return !(a == b);
         }
 
-         
+        public static explicit operator double(Vector v)
+        {
+            return v.Length; 
+        }
+
+        public static implicit operator Vector(double value)
+        {
+            return new Vector(value, 0); 
+        }
+
+        public static Vector operator -(Vector v)
+        {
+            return new Vector(-v.X, -v.Y);
+        }
+
+        public static Vector operator ++(Vector a)
+        {
+            return new Vector(a.X + 1, a.Y + 1);
+        }
+
+        public static Vector operator --(Vector a)
+        {
+            return new Vector(a.X - 1, a.Y - 1);
+        }
+
+        public static bool operator true(Vector a)
+        {
+            return a.X != 0 || a.Y != 0;
+        }
+
+        public static bool operator false(Vector a)
+        {
+            return a.X == 0 && a.Y == 0;
+        }
+
+
     }
 }
